@@ -15,6 +15,7 @@
 		6415F46820F6C7F700419608 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6415F46720F6C7F700419608 /* main.m */; };
 		6415F47220F6C7F700419608 /* TestVideoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6415F47120F6C7F700419608 /* TestVideoTests.m */; };
 		6415F47D20F6C7F700419608 /* TestVideoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6415F47C20F6C7F700419608 /* TestVideoUITests.m */; };
+		6415F48B20F6CD8100419608 /* big_buck_bunny.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6415F48A20F6CD8100419608 /* big_buck_bunny.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		6415F47820F6C7F700419608 /* TestVideoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestVideoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6415F47C20F6C7F700419608 /* TestVideoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestVideoUITests.m; sourceTree = "<group>"; };
 		6415F47E20F6C7F700419608 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6415F48A20F6CD8100419608 /* big_buck_bunny.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = big_buck_bunny.mp4; path = ../../../big_buck_bunny.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 			children = (
 				6415F45820F6C7F500419608 /* AppDelegate.h */,
 				6415F45920F6C7F500419608 /* AppDelegate.m */,
+				6415F48A20F6CD8100419608 /* big_buck_bunny.mp4 */,
 				6415F45B20F6C7F500419608 /* ViewController.h */,
 				6415F45C20F6C7F500419608 /* ViewController.m */,
 				6415F45E20F6C7F500419608 /* Main.storyboard */,
@@ -237,6 +240,7 @@
 			files = (
 				6415F46520F6C7F700419608 /* LaunchScreen.storyboard in Resources */,
 				6415F46220F6C7F700419608 /* Assets.xcassets in Resources */,
+				6415F48B20F6CD8100419608 /* big_buck_bunny.mp4 in Resources */,
 				6415F46020F6C7F500419608 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
