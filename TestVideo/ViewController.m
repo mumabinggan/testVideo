@@ -21,6 +21,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     [self setLocalMediaPlayer];
+    
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(endPlay) name:MPMoviePlayerPlaybackDidFinishNotification object:nil];
+    
+    //监听当前视频播放状态
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(loadStateDidChange:) name:MPMoviePlayerLoadStateDidChangeNotification object:nil];
 }
 
 - (void)setRemoteMediaPlayer {
@@ -47,6 +52,48 @@
     [_moviePlayer prepareToPlay];//缓存
 }
 
+- (void)setInLiveMediaPlayer {
+    NSURL* url = [NSURL URLWithString:@"http://live.hkstv.hk.lxdns.com/live/hks/playlist.m3u8"];
+    _moviePlayer = [[MPMoviePlayerController alloc] initWithContentURL:url];
+    [self.view addSubview:_moviePlayer.view];
+    
+    _moviePlayer.view.frame=CGRectMake(0, 0, self.view.frame.size.width, CGRectGetWidth(self.view.frame)*(9.0/16.0));
+    _moviePlayer.movieSourceType = MPMovieSourceTypeStreaming;//直播
+    [_moviePlayer prepareToPlay];
+}
+
+-(void)endPlay
+{
+    NSLog(@"播放结束");
+}
+
+-(void)loadStateDidChange:(NSNotification*)sender
+{
+    switch (_moviePlayer.loadState) {
+        case MPMovieLoadStatePlayable:
+        {
+            NSLog(@"加载完成,可以播放");
+        }
+            break;
+        case MPMovieLoadStatePlaythroughOK:
+        {
+            NSLog(@"缓冲完成，可以连续播放");
+        }
+            break;
+        case MPMovieLoadStateStalled:
+        {
+            NSLog(@"缓冲中");
+        }
+            break;
+        case MPMovieLoadStateUnknown:
+        {
+            NSLog(@"未知状态");
+        }
+            break;
+        default:
+            break;
+    }
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
